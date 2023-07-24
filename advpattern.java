@@ -1,7 +1,7 @@
 
 /**
  * Source code of Advance Patterns.
- * further files will be more detailed.
+ *
  * @author (M0NSTER)
  * @version (alpha)
  */
