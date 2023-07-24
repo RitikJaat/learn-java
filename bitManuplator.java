@@ -7,6 +7,7 @@ public class bitManuplator {
         System.out.println("1) Get Bit : ");
         System.out.println("2) Set Bit : ");
         System.out.println("3) Clear Bit : ");
+        System.out.println("4) Update Bit : ");
         int option = sc.nextInt();
 
         switch (option) {
@@ -58,6 +59,31 @@ public class bitManuplator {
                  */
                 int newNumber1 = notBitMask & n2;
                 System.out.println(newNumber1);
+                break;
+
+            case 4:
+            System.out.println("Enter a value for bit");
+            int n3 = sc.nextInt(); // default number used 5
+            System.out.println("Enter the postion you would like to Update");
+            int p3 = sc.nextInt(); // default number used 1
+            
+            System.out.println("Enter operation");
+            int operation = sc.nextInt();//used 1 as deafult //update bit to 1 else to 0
+
+            int bitMask3 = 1<<p3;
+
+            if(operation == 1){
+                // by using set
+                int newNumber2 = bitMask3 | n3 ;
+                System.out.println(newNumber2);
+            } else{
+                // clear
+                int newBitMask = ~(bitMask3);
+                int newNumber3 = newBitMask & n3;
+                System.out.println(newNumber3);
+            }
+
+
                 break;
             default:
                 System.out.println("Enter a valid option.");
