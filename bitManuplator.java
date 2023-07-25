@@ -90,5 +90,6 @@ public class bitManuplator {
                 main(args);
                 break;
         }
+        sc.close();
     }
 }
