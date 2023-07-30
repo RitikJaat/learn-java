@@ -46,11 +46,10 @@ public class Recurssion2 {
             return true;
         }
         if (array[index] < array[index + 1]) {
-            // arra is sorted till now
-            return sortedOrNot(array, index + 1);
-        } else {
+            // arra is unsorted  (2nd way)
             return false;
-        }
+        } 
+        return sortedOrNot(array, index+1);
     }
 
     public static void main(String[] args) {
