@@ -1,4 +1,4 @@
-import java.util.*;
+
 /*so basically its like a tree of options
  *        abc
  *  all these three have 2 choices and so does the output of these two choices
