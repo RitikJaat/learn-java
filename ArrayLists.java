@@ -1,3 +1,4 @@
+// used to efficently search
 import java.util.ArrayList;
 import java.util.Collections;
 
