@@ -92,9 +92,31 @@ public class singularLinkedList {
         }
         secLast.next = null;
     }
+
     // check size
-    public int getSize(){
+    public int getSize() {
         return size;
+    }
+
+    public void reverseIterate() {
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        Node prevNode = head;
+        Node currNode = head.next;
+
+        while (currNode != null) {
+            Node nextNode = currNode.next;
+            currNode.next = prevNode;
+
+            // update
+            prevNode = currNode;
+            currNode = nextNode;
+
+        }
+        head.next = null;
+        head = prevNode;
     }
 
     public static void main(String[] args) {
@@ -121,7 +143,12 @@ public class singularLinkedList {
         list.deleteLast();
         list.printlist();
 
-        System.out.println("-----Size of Nodes-----");
+        System.out.println("\n-----Size of Nodes-----\n");
         System.out.println(list.getSize());
+    
+        System.out.println("\n-----Reverse Nodes-----\n");
+        list.reverseIterate();
+        list.printlist();
+
     }
 }
