@@ -119,6 +119,18 @@ public class singularLinkedList {
         head = prevNode;
     }
 
+    public Node reverseRecursive(Node head) {
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node newHead = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+    }
+
     public static void main(String[] args) {
         singularLinkedList list = new singularLinkedList();
         System.out.println("\n-----Adding nodes-----\n");
@@ -145,9 +157,13 @@ public class singularLinkedList {
 
         System.out.println("\n-----Size of Nodes-----\n");
         System.out.println(list.getSize());
-    
+
         System.out.println("\n-----Reverse Nodes-----\n");
         list.reverseIterate();
+        list.printlist();
+
+        System.out.println("\n-----Reverse Nodes using Recursive-----\n");
+        list.head = list.reverseRecursive(list.head);
         list.printlist();
 
     }
